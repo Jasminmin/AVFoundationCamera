@@ -19,6 +19,8 @@ class CameraController: UIViewController {
     var rearCameraInput: AVCaptureDeviceInput?
     var photoOutput: AVCapturePhotoOutput?
     var previewLayer: AVCaptureVideoPreviewLayer?
+    //閃光燈
+    var flashMode = AVCaptureDevice.FlashMode.off
     
     enum CameraControllerError: Swift.Error {
         case captureSessionAlreadyRunning

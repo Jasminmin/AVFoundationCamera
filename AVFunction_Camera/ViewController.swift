@@ -19,6 +19,17 @@ class ViewController: UIViewController {
     @IBOutlet fileprivate var toggleCameraButton: UIButton!
     @IBOutlet fileprivate var capturePreviewView: UIView!
     
+    @IBAction func toggleFlash(_ sender: UIButton) {
+        if cameraController.flashMode == .on {
+            cameraController.flashMode = .off
+            toggleFlashButton.setImage(#imageLiteral(resourceName: "Flash Off Icon"), for: .normal)
+        }
+        else{
+            cameraController.flashMode = .on
+            toggleFlashButton.setImage(#imageLiteral(resourceName: "Flash On Icon"), for: .normal)
+        }
+    }
+    
     override var prefersStatusBarHidden: Bool { return true }
     
     override func viewDidLoad() {
