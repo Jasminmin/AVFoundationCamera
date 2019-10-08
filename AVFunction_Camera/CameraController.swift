@@ -129,6 +129,59 @@ class CameraController: UIViewController {
         self.previewLayer?.frame = view.frame
     }
 
+    func switchCameras() throws{
+        //確保切換相機時有效運作Capture Session，並確認有正在使用的相機
+        guard let currentCameraPosition = currentCameraPosition, let captureSession = self.captureSession, captureSession.isRunning else { throw CameraControllerError.captureSessionIsMissing}
+        
+        captureSession.beginConfiguration()
+        
+        func switchToFrontCamera() throws{
+            guard let rearCameraInput = self.rearCameraInput, captureSession.inputs.contains(rearCameraInput),
+            let frontCamera = self.frontCamera else { throw CameraControllerError.invalidOperation }
+            
+            self.frontCameraInput = try AVCaptureDeviceInput(device: frontCamera)
+            
+            captureSession.removeInput(rearCameraInput)
+            
+            if captureSession.canAddInput(self.frontCameraInput!) {
+                captureSession.addInput(self.frontCameraInput!)
+                
+                self.currentCameraPosition = .front
+            }
+                
+            else {
+                throw CameraControllerError.invalidOperation
+            }
+        }
+        
+        func switchToRearCamera() throws{
+            guard let frontCameraInput = self.frontCameraInput, captureSession.inputs.contains(frontCameraInput),
+                let rearCamera = self.rearCamera else { throw CameraControllerError.invalidOperation }
+            
+            self.rearCameraInput = try AVCaptureDeviceInput(device: rearCamera)
+            
+            captureSession.removeInput(frontCameraInput)
+            
+            if captureSession.canAddInput(self.rearCameraInput!) {
+                captureSession.addInput(self.rearCameraInput!)
+                
+                self.currentCameraPosition = .rear
+            }
+                
+            else {
+                throw CameraControllerError.invalidOperation
+            }
+        }
+        
+        switch currentCameraPosition{
+        case .front:
+            try switchToRearCamera()
+        case .rear:
+            try switchToFrontCamera()
+        }
+        
+        captureSession.commitConfiguration()
+    }
     /*
     // MARK: - Navigation
 
