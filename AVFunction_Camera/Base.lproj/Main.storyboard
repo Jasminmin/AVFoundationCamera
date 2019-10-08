@@ -43,6 +43,9 @@
                                             <constraint firstAttribute="width" constant="65" id="yAb-yI-MpJ"/>
                                         </constraints>
                                         <state key="normal" image="circle"/>
+                                        <connections>
+                                            <action selector="captureImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fz4-Xi-8Bo"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbg-aF-GWa">
                                         <rect key="frame" x="319" y="35" width="23" height="24"/>

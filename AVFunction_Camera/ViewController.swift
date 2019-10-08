@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class ViewController: UIViewController {
 
@@ -48,6 +49,18 @@ class ViewController: UIViewController {
         
         case .none:
             return
+        }
+    }
+    
+    @IBAction func captureImage(_ sender: UIButton) {
+        cameraController.captureImage {
+            (image, error) in guard let image = image else {
+                print(error ?? "Image capture error")
+                return
+            }
+            try? PHPhotoLibrary.shared().performChangesAndWait {
+                PHAssetChangeRequest.creationRequestForAsset(from: image)
+            }
         }
     }
     

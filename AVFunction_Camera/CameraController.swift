@@ -21,6 +21,7 @@ class CameraController: UIViewController {
     var previewLayer: AVCaptureVideoPreviewLayer?
     //閃光燈
     var flashMode = AVCaptureDevice.FlashMode.off
+    var photoCaptureCompletionBlock: ((UIImage?, Error?) -> Void)?
     
     enum CameraControllerError: Swift.Error {
         case captureSessionAlreadyRunning
@@ -182,6 +183,18 @@ class CameraController: UIViewController {
         
         captureSession.commitConfiguration()
     }
+    
+    //Capture Pictures
+    func captureImage(completion: @escaping (UIImage?, Error?) -> Void) {
+        guard let captureSession = captureSession, captureSession.isRunning else { completion(nil, CameraControllerError.captureSessionIsMissing); return }
+     
+        let settings = AVCapturePhotoSettings()
+        settings.flashMode = self.flashMode
+     
+        self.photoOutput?.capturePhoto(with: settings, delegate: self)
+        self.photoCaptureCompletionBlock = completion
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -192,4 +205,21 @@ class CameraController: UIViewController {
     }
     */
 
+}
+
+extension CameraController: AVCapturePhotoCaptureDelegate {
+    public func photoOutput(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
+                        resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Swift.Error?) {
+        if let error = error { self.photoCaptureCompletionBlock?(nil, error) }
+            
+        else if let buffer = photoSampleBuffer, let data = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: buffer, previewPhotoSampleBuffer: nil),
+            let image = UIImage(data: data) {
+            
+            self.photoCaptureCompletionBlock?(image, nil)
+        }
+            
+        else {
+            self.photoCaptureCompletionBlock?(nil, CameraControllerError.unknown)
+        }
+    }
 }
