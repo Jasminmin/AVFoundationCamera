@@ -39,8 +39,12 @@
                                         <state key="normal" image="video.fill" catalog="system"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQJ-pl-5sL">
-                                        <rect key="frame" x="169" y="594" width="36" height="36"/>
-                                        <state key="normal" image="round_data_usage_white_1x"/>
+                                        <rect key="frame" x="155" y="580" width="65" height="65"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="9E4-ZC-nw2"/>
+                                            <constraint firstAttribute="width" constant="65" id="yAb-yI-MpJ"/>
+                                        </constraints>
+                                        <state key="normal" image="circle"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,12 +57,12 @@
                                     <constraint firstItem="sbg-aF-GWa" firstAttribute="leading" secondItem="ZWy-Vs-UUY" secondAttribute="leading" constant="319" id="GZ0-D1-XYP"/>
                                     <constraint firstItem="afp-nT-VgY" firstAttribute="top" secondItem="L0c-ks-J6H" secondAttribute="bottom" constant="27" id="Ieu-R9-3Ib"/>
                                     <constraint firstAttribute="trailing" secondItem="L0c-ks-J6H" secondAttribute="trailing" constant="36" id="V3o-A0-lDu"/>
-                                    <constraint firstItem="afp-nT-VgY" firstAttribute="leading" secondItem="mQJ-pl-5sL" secondAttribute="trailing" constant="110" id="XxC-vh-HsO"/>
+                                    <constraint firstItem="afp-nT-VgY" firstAttribute="leading" secondItem="mQJ-pl-5sL" secondAttribute="trailing" constant="95" id="WLO-1v-riu"/>
                                     <constraint firstAttribute="bottom" secondItem="afp-nT-VgY" secondAttribute="bottom" constant="44" id="Z1N-K5-wz3"/>
-                                    <constraint firstAttribute="bottom" secondItem="mQJ-pl-5sL" secondAttribute="bottom" constant="37" id="euT-mn-0Ar"/>
+                                    <constraint firstAttribute="bottom" secondItem="mQJ-pl-5sL" secondAttribute="bottom" constant="22" id="bp9-5X-Szh"/>
+                                    <constraint firstItem="mQJ-pl-5sL" firstAttribute="leading" secondItem="ZWy-Vs-UUY" secondAttribute="leading" constant="155" id="fX0-cK-aif"/>
                                     <constraint firstAttribute="trailing" secondItem="sbg-aF-GWa" secondAttribute="trailing" constant="39" id="oxX-Zp-gVf"/>
                                     <constraint firstItem="Ey7-Jl-KYj" firstAttribute="top" secondItem="sbg-aF-GWa" secondAttribute="bottom" constant="23" id="q3U-sv-x3w"/>
-                                    <constraint firstItem="mQJ-pl-5sL" firstAttribute="leading" secondItem="ZWy-Vs-UUY" secondAttribute="leading" constant="169" id="zrt-Zg-5fB"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -71,6 +75,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="captureButton" destination="mQJ-pl-5sL" id="3V2-dn-npj"/>
+                        <outlet property="capturePreviewView" destination="ZWy-Vs-UUY" id="1M9-GW-WXe"/>
+                        <outlet property="photoModeButton" destination="L0c-ks-J6H" id="tev-pG-oA8"/>
+                        <outlet property="toggleCameraButton" destination="Ey7-Jl-KYj" id="r3X-mz-loj"/>
+                        <outlet property="toggleFlashButton" destination="sbg-aF-GWa" id="fX9-Qy-uHf"/>
+                        <outlet property="videoModeButton" destination="afp-nT-VgY" id="hCv-Dn-WgH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,7 +93,7 @@
         <image name="bolt.slash.fill" catalog="system" width="50" height="64"/>
         <image name="camera.fill" catalog="system" width="64" height="48"/>
         <image name="camera.rotate.fill" catalog="system" width="64" height="48"/>
-        <image name="round_data_usage_white_1x" width="36" height="36"/>
+        <image name="circle" width="80" height="80"/>
         <image name="video.fill" catalog="system" width="64" height="40"/>
     </resources>
 </document>
