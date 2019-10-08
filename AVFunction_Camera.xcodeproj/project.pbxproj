@@ -13,6 +13,7 @@
 		B3B2CE84234C0D17001C08D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3B2CE82234C0D17001C08D3 /* Main.storyboard */; };
 		B3B2CE86234C0D1B001C08D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3B2CE85234C0D1B001C08D3 /* Assets.xcassets */; };
 		B3B2CE89234C0D1B001C08D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3B2CE87234C0D1B001C08D3 /* LaunchScreen.storyboard */; };
+		B3DFA05D234C276C00EB6308 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DFA05C234C276C00EB6308 /* CameraController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B3B2CE85234C0D1B001C08D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3B2CE88234C0D1B001C08D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3B2CE8A234C0D1B001C08D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3DFA05C234C276C00EB6308 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				B3B2CE85234C0D1B001C08D3 /* Assets.xcassets */,
 				B3B2CE87234C0D1B001C08D3 /* LaunchScreen.storyboard */,
 				B3B2CE8A234C0D1B001C08D3 /* Info.plist */,
+				B3DFA05C234C276C00EB6308 /* CameraController.swift */,
 			);
 			path = AVFunction_Camera;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				B3B2CE81234C0D17001C08D3 /* ViewController.swift in Sources */,
 				B3B2CE7D234C0D17001C08D3 /* AppDelegate.swift in Sources */,
+				B3DFA05D234C276C00EB6308 /* CameraController.swift in Sources */,
 				B3B2CE7F234C0D17001C08D3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +289,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GKMCKR94RH;
 				INFOPLIST_FILE = AVFunction_Camera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GKMCKR94RH;
 				INFOPLIST_FILE = AVFunction_Camera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

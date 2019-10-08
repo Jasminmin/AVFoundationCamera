@@ -14,13 +14,74 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWy-Vs-UUY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbg-aF-GWa">
+                                        <rect key="frame" x="319" y="38" width="17" height="22"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="bolt.slash.fill" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ey7-Jl-KYj">
+                                        <rect key="frame" x="318" y="83" width="24" height="22"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="camera.rotate.fill" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0c-ks-J6H">
+                                        <rect key="frame" x="315" y="552" width="24" height="22"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="camera.fill" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afp-nT-VgY">
+                                        <rect key="frame" x="315" y="601" width="24" height="22"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="video.fill" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQJ-pl-5sL">
+                                        <rect key="frame" x="169" y="594" width="36" height="36"/>
+                                        <state key="normal" image="round_data_usage_white_1x"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="afp-nT-VgY" secondAttribute="trailing" constant="36" id="2VS-6k-vXq"/>
+                                    <constraint firstItem="afp-nT-VgY" firstAttribute="top" secondItem="L0c-ks-J6H" secondAttribute="bottom" constant="27" id="EqN-Gm-qfE"/>
+                                    <constraint firstItem="afp-nT-VgY" firstAttribute="leading" secondItem="ZWy-Vs-UUY" secondAttribute="leading" constant="315" id="F3c-y0-bCT"/>
+                                    <constraint firstItem="sbg-aF-GWa" firstAttribute="top" secondItem="ZWy-Vs-UUY" secondAttribute="top" constant="38" id="Fwl-M4-f52"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ey7-Jl-KYj" secondAttribute="trailing" constant="33" id="GHz-Bl-moC"/>
+                                    <constraint firstItem="sbg-aF-GWa" firstAttribute="leading" secondItem="ZWy-Vs-UUY" secondAttribute="leading" constant="319" id="GZ0-D1-XYP"/>
+                                    <constraint firstItem="afp-nT-VgY" firstAttribute="top" secondItem="L0c-ks-J6H" secondAttribute="bottom" constant="27" id="Ieu-R9-3Ib"/>
+                                    <constraint firstAttribute="trailing" secondItem="L0c-ks-J6H" secondAttribute="trailing" constant="36" id="V3o-A0-lDu"/>
+                                    <constraint firstItem="afp-nT-VgY" firstAttribute="leading" secondItem="mQJ-pl-5sL" secondAttribute="trailing" constant="110" id="XxC-vh-HsO"/>
+                                    <constraint firstAttribute="bottom" secondItem="afp-nT-VgY" secondAttribute="bottom" constant="44" id="Z1N-K5-wz3"/>
+                                    <constraint firstAttribute="bottom" secondItem="mQJ-pl-5sL" secondAttribute="bottom" constant="37" id="euT-mn-0Ar"/>
+                                    <constraint firstAttribute="trailing" secondItem="sbg-aF-GWa" secondAttribute="trailing" constant="39" id="oxX-Zp-gVf"/>
+                                    <constraint firstItem="Ey7-Jl-KYj" firstAttribute="top" secondItem="sbg-aF-GWa" secondAttribute="bottom" constant="23" id="q3U-sv-x3w"/>
+                                    <constraint firstItem="mQJ-pl-5sL" firstAttribute="leading" secondItem="ZWy-Vs-UUY" secondAttribute="leading" constant="169" id="zrt-Zg-5fB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZWy-Vs-UUY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NUo-ya-Dkb"/>
+                            <constraint firstItem="ZWy-Vs-UUY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZV3-Ec-b1x"/>
+                            <constraint firstItem="ZWy-Vs-UUY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bzS-4N-dkI"/>
+                            <constraint firstItem="ZWy-Vs-UUY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ywx-W1-DmR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-57" y="130"/>
+            <point key="canvasLocation" x="-58.399999999999999" y="129.98500749625188"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bolt.slash.fill" catalog="system" width="50" height="64"/>
+        <image name="camera.fill" catalog="system" width="64" height="48"/>
+        <image name="camera.rotate.fill" catalog="system" width="64" height="48"/>
+        <image name="round_data_usage_white_1x" width="36" height="36"/>
+        <image name="video.fill" catalog="system" width="64" height="40"/>
+    </resources>
 </document>
